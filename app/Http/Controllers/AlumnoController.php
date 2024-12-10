@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Turno;
+use App\Models\turno;
 use App\Models\Alumno;
 use App\Models\Carrera;
 use Illuminate\Http\Request;
@@ -35,7 +35,7 @@ class AlumnoController extends Controller
     //     $alumnos= Alumno::all(); 
     //     $alumno=new Alumno;
     //     $carreras=Carrera::all();
-    //     $turnos = Turno::paginate(3);
+    //     $turnos = Turno:paginate(3);
 
     //     $accion='C';
     //     $txtbtn='Guardar';
@@ -51,7 +51,7 @@ class AlumnoController extends Controller
     //         // Verificar si el usuario de alumno contiene números
     //         if (preg_match('/\d/', $alumno->noctrl)) {
     //             // Redirigir a la página específica si contiene números
-    //             $turno = Turno::all();
+    //             $turno = Turno:all();
     //             return view('Alumnos2/inicioAlumnos', compact('alumno', 'turno'));
     //         } else {
     //             // Redirigir a otra página o manejar el caso donde no tiene números
@@ -67,7 +67,7 @@ class AlumnoController extends Controller
     //         $alumnos = Alumno::all();
     //         $alumno = new Alumno;
     //         $carreras = Carrera::all();
-    //         $turnos = Turno::paginate(3);
+    //         $turnos = Turno:paginate(3);
     
     //         $accion = 'C';
     //         $txtbtn = 'Guardar';
@@ -97,7 +97,7 @@ class AlumnoController extends Controller
             session(['alumno' => $alumno, 'turno' => $turno]);
     
             // Obtener todos los turnos disponibles (si necesitas mostrarlos)
-            $turnos = Turno::all();
+            $turnos = Turno:all();
     
             return view('Alumnos2/inicioAlumnos', compact('alumno', 'turnos','turno'));
         }
@@ -117,7 +117,7 @@ public function index2()
     $alumnos = Alumno::all();
     $alumno = new Alumno;
     $carreras = Carrera::all();
-    $turnos = Turno::paginate(3);
+    $turnos = Turno:paginate(3);
 
     $accion = 'C';
     $txtbtn = 'Guardar';
@@ -182,11 +182,11 @@ public function index2()
     //     // Obtener todas las carreras para mostrarlas en el dropdown
     //     $carreras = Carrera::all();
     //     $alumnos = Alumno::paginate(5);
-    //     $turnos = Turno::all();
+    //     $turnos = Turno:all();
     //     $accion = 'E';
     //     $txtbtn = 'actualizar';
     //     $des = 'readonly';
-    //     $turnos = Turno::paginate(3);
+    //     $turnos = Turno:paginate(3);
     //     $turno = new Turno();
 
     //     return view("Alumnos2.form", compact('alumnos', 'alumno', 'accion', 'txtbtn', 'des', 'carreras','turnos','turno'));
@@ -198,7 +198,7 @@ public function index2()
     //     $carreras = Carrera::all();
     //     $alumnos = Alumno::all();
     //     // Obtener los turnos paginados
-    //     $turnos = Turno::paginate(3);
+    //     $turnos = Turno:paginate(3);
     
     //     // Obtener el turno asociado al alumno (si existe)
     //     $turno = $alumno->turno ?? new Turno();
@@ -236,7 +236,7 @@ public function edit2(Alumno $alumno)
     if (session()->has('admin')) {
         $carreras = Carrera::all();
         $alumnos = Alumno::all();
-        $turnos = Turno::paginate(3);
+        $turnos = Turno:paginate(3);
 
         // Obtener el turno asociado al alumno (si existe)
         $turno = $alumno->turno ?? new Turno();
@@ -285,11 +285,11 @@ public function update2(Request $request, Alumno $alumno)
         $alumno->update($dataAlumno);
 
         // Buscar el turno asociado al alumno
-        $turno = Turno::where('noctrl', $alumno->noctrl)->first();
+        $turno = Turno:where('noctrl', $alumno->noctrl)->first();
 
         if ($turno) {
             // Verificar si la combinación de fecha y hora ya existe
-            $turnoExistente = Turno::where('fecha', $dataTurno['fecha'])
+            $turnoExistente = Turno:where('fecha', $dataTurno['fecha'])
                 ->where('hora', $dataTurno['hora'])
                 ->where('idTurno', '!=', $turno->idTurno)
                 ->first();
@@ -393,11 +393,11 @@ public function update(Request $request)
     //     $alumno->update($dataAlumno);
     
     //     // Buscar el turno asociado al alumno
-    //     $turno = Turno::where('noctrl', $alumno->noctrl)->first();
+    //     $turno = Turno:where('noctrl', $alumno->noctrl)->first();
     
     //     if ($turno) {
     //         // Verificar si la combinación de fecha y hora ya existe en otro turno
-    //         $turnoExistente = Turno::where('fecha', $dataTurno['fecha'])
+    //         $turnoExistente = Turno:where('fecha', $dataTurno['fecha'])
     //                                ->where('hora', $dataTurno['hora'])
     //                                ->where('idTurno', '!=', $turno->idTurno) // Excluir el turno actual
     //                                ->first();
@@ -465,11 +465,11 @@ public function update(Request $request)
     //     $alumno->update($dataAlumno);
     
     //     // Buscar el turno asociado al alumno
-    //     $turno = Turno::where('noctrl', $alumno->noctrl)->first();
+    //     $turno = Turno:where('noctrl', $alumno->noctrl)->first();
     
     //     if ($turno) {
     //         // Verificar si la combinación de fecha y hora ya existe en otro turno
-    //         $turnoExistente = Turno::where('fecha', $dataTurno['fecha'])
+    //         $turnoExistente = Turno:where('fecha', $dataTurno['fecha'])
     //                                ->where('hora', $dataTurno['hora'])
     //                                ->where('idTurno', '!=', $turno->idTurno) // Excluir el turno actual
     //                                ->first();

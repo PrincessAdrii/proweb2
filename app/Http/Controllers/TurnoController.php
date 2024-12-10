@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\turno;
+use App\Models\Turno;
 use App\Models\Alumno;
 use Illuminate\Http\Request;
 
@@ -60,7 +60,7 @@ class TurnoController extends Controller
     //         Turno::create($val);
     
     //         // Si todo es correcto, redirigimos con un mensaje de éxito
-    //         return redirect()->route('Alumnos.index')->with("mensaje", 'Turno asignado correctamente.');
+    //         return redirect()->route('Alumnos.index')->with("mensaje", 'Turno: asignado correctamente.');
     //     } catch (\Illuminate\Database\QueryException $e) {
     //         // Si el código de error es 23000, es un conflicto de clave única
     //         if ($e->getCode() == 23000) {
@@ -104,7 +104,7 @@ class TurnoController extends Controller
             Turno::create($val);
     
             // Si todo es correcto, redirigir con mensaje de éxito
-            return redirect()->route('admin.index')->with("mensaje", 'Turno asignado correctamente.');
+            return redirect()->route('admin.index')->with("mensaje", 'Turno: asignado correctamente.');
         } catch (\Exception $e) {
             // Capturar cualquier error adicional
             return redirect()->back()
@@ -137,7 +137,7 @@ class TurnoController extends Controller
     $turno = Turno::find($idTurno);
 
     if (!$turno) {
-        abort(404, "Turno con idTurno {$idTurno} no encontrado.");
+        abort(404, "Turno: con idTurno {$idTurno} no encontrado.");
     }
 
     $turnos = Turno::paginate(5);
@@ -158,7 +158,7 @@ class TurnoController extends Controller
 
     if (!$turno) {
         // Si no se encuentra el turno, aborta con un mensaje de error
-        return redirect()->route('Alumnos.index')->with('error', 'Turno no encontrado.');
+        return redirect()->route('Alumnos.index')->with('error', 'Turno: no encontrado.');
     }
 
     // Valida los datos recibidos
@@ -173,7 +173,7 @@ class TurnoController extends Controller
     $turno->update($val);
 
     // Redirige a la vista principal con un mensaje de éxito
-    return redirect()->route('Alumnos.index')->with('mensaje', 'Turno actualizado correctamente.');
+    return redirect()->route('Alumnos.index')->with('mensaje', 'Turno: actualizado correctamente.');
 }
 
 

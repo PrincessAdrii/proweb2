@@ -108,7 +108,7 @@ class PagoController extends Controller
         }
     
         // Actualizar el campo 'inscripcion' en la tabla turnos
-        $turno = Turno::where('noctrl', $noctrl)->orderBy('created_at', 'desc')->first();
+        $turno = Turno:where('noctrl', $noctrl)->orderBy('created_at', 'desc')->first();
         if ($turno) {
             $turno->inscripcion = 'reinscripción';
             $turno->save();

@@ -24,6 +24,6 @@ class Alumno extends Model
 
  public function turno(): HasOne
 {
-    return $this->hasOne(Turno::class, 'noctrl', 'noctrl');
+    return $this->hasOne(Turno:class, 'noctrl', 'noctrl');
 }
 }
