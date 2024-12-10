@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class turno extends Model
+class Turno extends Model
 {
     /** @use HasFactory<\Database\Factories\TurnoFactory> */
     use HasFactory;
