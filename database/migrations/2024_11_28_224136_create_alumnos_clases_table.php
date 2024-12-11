@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('alumnos_clases', function (Blueprint $table) {
             $table->string("idClases");
-            $table->string("calificacion");
+            $table->string("calificacion")->nullable();
             $table->string('noctrl',8);
             $table->foreign('noctrl')->references('noctrl')->on('alumnos');
             $table->string('idGrupo',15);

@@ -68,9 +68,9 @@
  <li class="nav-item" role="presentation">
     <a href="{{ route('verhorarioalumno') }}" class="nav-link">Ver Horarios</a>
  </li>
- {{-- @php
- echo \Carbon\Carbon::today()->toDateString()
- @endphp --}}
+ @php
+    // echo \Carbon\Carbon::now();
+ @endphp
  @if(session('turno') && session('turno')->fecha == \Carbon\Carbon::today()->toDateString() 
  
     &&

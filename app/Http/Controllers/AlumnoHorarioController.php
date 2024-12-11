@@ -838,7 +838,7 @@ class AlumnoHorarioController extends Controller
 
                 DB::table('alumnos_clases')->insert([
                     'idClases' => $idClases,
-                    'calificacion' => NULL,
+                    // 'calificacion' => NULL,
                     'noctrl' => $noctrl,
                     'idGrupo' => $idGrupo,
                     'created_at' => DB::raw('NOW()'),
